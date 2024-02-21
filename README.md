@@ -1,3 +1,11 @@
+# asdfer's i3
+Forked i3 to add minor features to my taste.
+
+Testing not used because I'm dumb
+
+**Modifications:**
+- Force kill window
+
 ![Logo](docs/logo-30.png) i3: A tiling window manager
 =====================================================
 
