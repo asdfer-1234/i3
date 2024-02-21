@@ -72,7 +72,9 @@ typedef enum {
  * only this specific window or the whole X11 client */
 typedef enum { DONT_KILL_WINDOW = 0,
                KILL_WINDOW = 1,
-               KILL_CLIENT = 2 } kill_window_t;
+               KILL_CLIENT = 2,
+               KILL_WINDOW_FORCE = 3,
+               KILL_CLIENT_FORCE = 4} kill_window_t;
 
 /** describes if the window is adjacent to the output (physical screen) edges. */
 typedef enum { ADJ_NONE = 0,

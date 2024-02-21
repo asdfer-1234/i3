@@ -218,7 +218,7 @@ state FOCUS_OUTPUT:
 
 # kill [window|client]
 state KILL:
-  kill_mode = 'window', 'client'
+  kill_mode = 'windowforce', 'clientforce', 'window', 'client'
       -> call cmd_kill($kill_mode)
   end
       -> call cmd_kill($kill_mode)

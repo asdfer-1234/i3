@@ -1251,6 +1251,10 @@ void cmd_kill(I3_CMD, const char *kill_mode_str) {
         kill_mode = KILL_WINDOW;
     else if (strcmp(kill_mode_str, "client") == 0)
         kill_mode = KILL_CLIENT;
+    else if (strcmp(kill_mode_str, "windowforce") == 0)
+        kill_mode = KILL_WINDOW_FORCE;
+    else if (strcmp(kill_mode_str, "clientforce") == 0)
+        kill_mode = KILL_CLIENT_FORCE;
     else {
         yerror("BUG: called with kill_mode=%s", kill_mode_str);
         return;
