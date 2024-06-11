@@ -113,3 +113,4 @@ CFGFUN(bar_strip_workspace_numbers, const char *value);
 CFGFUN(bar_strip_workspace_name, const char *value);
 CFGFUN(bar_start);
 CFGFUN(bar_finish);
+CFGFUN(decoration_margin, const long margin);

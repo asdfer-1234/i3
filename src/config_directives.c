@@ -600,6 +600,10 @@ CFGFUN(color, const char *colorclass, const char *border, const char *background
 #undef APPLY_COLORS
 }
 
+CFGFUN(decoration_margin, const long margin) {
+    config.decoration_margin = margin;
+}
+
 CFGFUN(assign_output, const char *output) {
     if (match_is_empty(current_match)) {
         ELOG("Match is empty, ignoring this assignment\n");

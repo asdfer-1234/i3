@@ -62,6 +62,7 @@ state INITIAL:
       -> COLOR_SINGLE
   colorclass = 'client.focused_inactive', 'client.focused_tab_title', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
       -> COLOR_BORDER
+  'decoration_margin'                      -> DECORATION_MARGIN
 
 # We ignore comments and 'set' lines (variables).
 state IGNORE_LINE:
@@ -410,6 +411,11 @@ state COLOR_CHILD_BORDER:
       -> call cfg_color($colorclass, $border, $background, $text, $indicator, $child_border)
   end
       -> call cfg_color($colorclass, $border, $background, $text, $indicator, NULL)
+
+# decoration margin
+state DECORATION_MARGIN:
+  margin = number
+      -> call cfg_decoration_margin(&margin)
 
 # <exec|exec_always> [--no-startup-id] command
 state EXEC:

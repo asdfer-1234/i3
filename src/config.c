@@ -208,6 +208,8 @@ bool load_configuration(const char *override_configpath, config_load_t load_type
     INIT_COLOR(config.bar.unfocused, "#333333", "#222222", "#888888", "#000000");
     INIT_COLOR(config.bar.urgent, "#2f343a", "#900000", "#ffffff", "#000000");
 
+    config.decoration_margin = 4;
+
     config.show_marks = true;
 
     config.default_border = BS_NORMAL;

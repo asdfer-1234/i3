@@ -5,6 +5,7 @@ Testing not used because I'm dumb
 
 **Modifications:**
 - Force kill window
+- Decoration margins as a config (I found 4 pixels was the default)
 
 ![Logo](docs/logo-30.png) i3: A tiling window manager
 =====================================================

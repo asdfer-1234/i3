@@ -277,6 +277,9 @@ struct Config {
 
     /* Disable gaps if there is only one container on the workspace */
     smart_gaps_t smart_gaps;
+
+    /* Margin to add vertically on decorations */
+    int32_t decoration_margin;
 };
 
 /**
