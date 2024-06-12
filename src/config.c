@@ -196,7 +196,9 @@ bool load_configuration(const char *override_configpath, config_load_t load_type
     config.client.background = draw_util_hex_to_color("#000000");
     INIT_COLOR(config.client.focused, "#4c7899", "#285577", "#ffffff", "#2e9ef4");
     INIT_COLOR(config.client.focused_inactive, "#333333", "#5f676a", "#ffffff", "#484e50");
+    INIT_COLOR(config.client.focused_inactive_alternate, "#333333", "#494f51", "#ffffff", "#484e50");
     INIT_COLOR(config.client.unfocused, "#333333", "#222222", "#888888", "#292d2e");
+    INIT_COLOR(config.client.unfocused_alternate, "#333333", "#070707", "#888888", "#292d2e");
     INIT_COLOR(config.client.urgent, "#2f343a", "#900000", "#ffffff", "#900000");
     config.client.got_focused_tab_title = false;
 
@@ -207,6 +209,8 @@ bool load_configuration(const char *override_configpath, config_load_t load_type
     INIT_COLOR(config.bar.focused, "#4c7899", "#285577", "#ffffff", "#000000");
     INIT_COLOR(config.bar.unfocused, "#333333", "#222222", "#888888", "#000000");
     INIT_COLOR(config.bar.urgent, "#2f343a", "#900000", "#ffffff", "#000000");
+
+    config.alternate_stack_decoration = false;
 
     config.decoration_margin = 4;
 

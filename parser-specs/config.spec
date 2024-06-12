@@ -60,8 +60,9 @@ state INITIAL:
   exectype = 'exec_always', 'exec'         -> EXEC
   colorclass = 'client.background'
       -> COLOR_SINGLE
-  colorclass = 'client.focused_inactive', 'client.focused_tab_title', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+  colorclass = 'client.focused_inactive_alternate', 'client.focused_inactive', 'client.focused_tab_title', 'client.focused', 'client.unfocused_alternate', 'client.unfocused', 'client.urgent', 'client.placeholder'
       -> COLOR_BORDER
+  'alternate_stack_decoration'             -> ALTERNATE_STACK_DECORATION
   'decoration_margin'                      -> DECORATION_MARGIN
 
 # We ignore comments and 'set' lines (variables).
@@ -411,6 +412,11 @@ state COLOR_CHILD_BORDER:
       -> call cfg_color($colorclass, $border, $background, $text, $indicator, $child_border)
   end
       -> call cfg_color($colorclass, $border, $background, $text, $indicator, NULL)
+
+# alternate tabbed
+state ALTERNATE_STACK_DECORATION:
+  value = 'yes', 'no'
+      -> call cfg_alternate_stack_decoration($value)
 
 # decoration margin
 state DECORATION_MARGIN:

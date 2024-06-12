@@ -239,8 +239,10 @@ struct Config {
         color_t background;
         struct Colortriple focused;
         struct Colortriple focused_inactive;
+        struct Colortriple focused_inactive_alternate;
         struct Colortriple focused_tab_title;
         struct Colortriple unfocused;
+        struct Colortriple unfocused_alternate;
         struct Colortriple urgent;
         struct Colortriple placeholder;
         bool got_focused_tab_title;
@@ -250,6 +252,9 @@ struct Config {
         struct Colortriple unfocused;
         struct Colortriple urgent;
     } bar;
+
+    /* Alternate decoration colors of stacked containers */
+    bool alternate_stack_decoration;
 
     /** What should happen when a new popup is opened during fullscreen mode */
     enum {

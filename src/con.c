@@ -2597,3 +2597,19 @@ bool con_inside_stacked_or_tabbed(Con *con) {
     }
     return con_inside_stacked_or_tabbed(con->parent);
 }
+
+bool con_alternate(Con *con) {
+    if(con->parent == NULL){
+        return false;
+    }
+    int i = 0;
+    Con *sibling;
+    TAILQ_FOREACH(sibling, &(con->parent->nodes_head), nodes){
+        if(sibling == con){
+            return i % 2 == 1;
+        }
+        i++;
+    }
+    ELOG("con_alternate has looped all siblings yet did not find itself");
+    return false;
+}

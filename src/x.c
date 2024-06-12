@@ -9,6 +9,7 @@
  *
  */
 #include "all.h"
+#include "con.h"
 
 #include <unistd.h>
 
@@ -496,9 +497,13 @@ void x_draw_decoration(Con *con) {
         if (config.client.got_focused_tab_title && !leaf && con_descend_focused(con) == focused) {
             /* Stacked/tabbed parent of focused container */
             p->color = &config.client.focused_tab_title;
+        } else if (config.alternate_stack_decoration && con_alternate(con)){
+            p->color = &config.client.focused_inactive_alternate;
         } else {
             p->color = &config.client.focused_inactive;
         }
+    } else if (config.alternate_stack_decoration && con_alternate(con)){
+        p->color = &config.client.unfocused_alternate;
     } else {
         p->color = &config.client.unfocused;
     }

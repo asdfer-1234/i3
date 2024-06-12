@@ -590,14 +590,20 @@ CFGFUN(color, const char *colorclass, const char *border, const char *background
         }                                                                                                    \
     } while (0)
 
-    APPLY_COLORS(focused_inactive);
-    APPLY_COLORS(focused_tab_title);
     APPLY_COLORS(focused);
+    APPLY_COLORS(focused_inactive);
+    APPLY_COLORS(focused_inactive_alternate);
+    APPLY_COLORS(focused_tab_title);
     APPLY_COLORS(unfocused);
+    APPLY_COLORS(unfocused_alternate);
     APPLY_COLORS(urgent);
     APPLY_COLORS(placeholder);
 
 #undef APPLY_COLORS
+}
+
+CFGFUN(alternate_stack_decoration, const char *value) {
+    config.alternate_stack_decoration = strcmp("yes", value) == 0;
 }
 
 CFGFUN(decoration_margin, const long margin) {
