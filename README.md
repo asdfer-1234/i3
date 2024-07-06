@@ -7,5 +7,5 @@ Automated Testing has been ignored because I don't know Perl.
 
 **Modifications:**
 - Force kill window
-- Decoration margins as a config (I found 4 pixels was the default)
+- Decoration paddings as a config (I found 4 pixels was the default)
 - Alternating window decoration colors

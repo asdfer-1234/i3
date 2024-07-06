@@ -606,8 +606,8 @@ CFGFUN(alternate_stack_decoration, const char *value) {
     config.alternate_stack_decoration = strcmp("yes", value) == 0;
 }
 
-CFGFUN(decoration_margin, const long margin) {
-    config.decoration_margin = margin;
+CFGFUN(decoration_padding, const long padding) {
+    config.decoration_padding = padding;
 }
 
 CFGFUN(assign_output, const char *output) {

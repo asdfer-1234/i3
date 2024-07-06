@@ -212,7 +212,7 @@ bool load_configuration(const char *override_configpath, config_load_t load_type
 
     config.alternate_stack_decoration = false;
 
-    config.decoration_margin = 4;
+    config.decoration_padding = 4;
 
     config.show_marks = true;
 

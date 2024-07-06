@@ -63,7 +63,7 @@ state INITIAL:
   colorclass = 'client.focused_inactive_alternate', 'client.focused_inactive', 'client.focused_tab_title', 'client.focused', 'client.unfocused_alternate', 'client.unfocused', 'client.urgent', 'client.placeholder'
       -> COLOR_BORDER
   'alternate_stack_decoration'             -> ALTERNATE_STACK_DECORATION
-  'decoration_margin'                      -> DECORATION_MARGIN
+  'decoration_padding'                      -> DECORATION_PADDING
 
 # We ignore comments and 'set' lines (variables).
 state IGNORE_LINE:
@@ -418,10 +418,10 @@ state ALTERNATE_STACK_DECORATION:
   value = 'yes', 'no'
       -> call cfg_alternate_stack_decoration($value)
 
-# decoration margin
-state DECORATION_MARGIN:
-  margin = number
-      -> call cfg_decoration_margin(&margin)
+# decoration padding
+state DECORATION_PADDING:
+  padding = number
+      -> call cfg_decoration_padding(&padding)
 
 # <exec|exec_always> [--no-startup-id] command
 state EXEC:
