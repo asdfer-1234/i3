@@ -573,7 +573,7 @@ void con_merge_into(Con *old, Con *new);
 bool con_inside_stacked_or_tabbed(Con *con);
 
 /**
- * Returns whether the container should alternate color.
+ * Returns whether the container should use the alternated colors
  */
 
 bool con_alternate(Con *con);

@@ -8,4 +8,4 @@ Automated Testing has been ignored because I don't know Perl.
 **Modifications:**
 - Force kill window
 - Decoration paddings as a config (I found 4 pixels was the default)
-- Alternating window decoration colors
+- Alternating window decoration colors for decorations that are clumped together

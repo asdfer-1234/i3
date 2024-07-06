@@ -2599,9 +2599,16 @@ bool con_inside_stacked_or_tabbed(Con *con) {
 }
 
 bool con_alternate(Con *con) {
-    if(con->parent == NULL){
+    if(!config.alternate_stack_decoration){
         return false;
     }
+    if(con->parent == NULL || con->parent->layout == L_SPLITV){
+        return false;
+    }
+    if(config.gaps.inner != 0 && !con_inside_stacked_or_tabbed(con)){
+        return false;
+    }
+
     int i = 0;
     Con *sibling;
     TAILQ_FOREACH(sibling, &(con->parent->nodes_head), nodes){
