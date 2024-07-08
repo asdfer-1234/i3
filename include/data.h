@@ -705,6 +705,9 @@ struct Con {
      * any padding, 1 means display with 1 pixel of padding and so on. */
     int window_icon_padding;
 
+    /** Horizontal padding applied to titles in decoration */
+    int title_padding;
+
     /* a sticky-group is an identifier which bundles several containers to a
      * group. The contents are shared between all of them, that is they are
      * displayed on whichever of the containers is currently visible */

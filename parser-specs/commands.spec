@@ -41,6 +41,7 @@ state INITIAL:
   'swap' -> SWAP
   'title_format' -> TITLE_FORMAT
   'title_window_icon' -> TITLE_WINDOW_ICON
+  'title_padding' -> TITLE_PADDING
   'mode' -> MODE
   'bar' -> BAR
   'gaps' -> GAPS
@@ -523,6 +524,14 @@ state TITLE_WINDOW_ICON_PADDING:
     -> call cmd_title_window_icon($enable, &padding)
   'px'
     -> call cmd_title_window_icon($enable, &padding)
+  padding = number
+    ->
+
+state TITLE_PADDING:
+  end
+    -> call cmd_title_padding(&padding)
+  'px'
+    -> call cmd_title_padding(&padding)
   padding = number
     ->
 

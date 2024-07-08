@@ -2119,6 +2119,24 @@ void cmd_title_window_icon(I3_CMD, const char *enable, int padding) {
     ysuccess(true);
 }
 
+void cmd_title_padding(I3_CMD, int padding) {
+    DLOG("setting title_padding=%d\n", padding);
+
+    owindow *current;
+    TAILQ_FOREACH (current, &owindows, owindows) {
+        current->con->title_padding = padding;
+        DLOG("Set title_padding for %p / %s to %d\n", current->con, current->con->name, current->con->title_padding);
+
+        if (current->con->window != NULL) {
+            /* Make sure the window title is redrawn immediately. */
+            current->con->window->name_x_changed = true;
+        } else {
+            /* For windowless containers we also need to force the redrawing. */
+            FREE(current->con->deco_render_params);
+        }
+    }
+}
+
 /*
  * Implementation of 'rename workspace [<name>] to <name>'
  *
