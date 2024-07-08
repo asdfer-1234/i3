@@ -7,5 +7,5 @@ Automated Testing has been ignored because I don't know Perl.
 
 **Modifications:**
 - Force kill window
-- Decoration paddings as a config (I found 4 pixels was the default)
+- Vertical(Fat decorations!) and horizontal(no need to add those pesky spaces in your title_format) Decoration paddings as a config
 - Alternating window decoration colors for decorations that are clumped together
